@@ -1,9 +1,7 @@
 FROM openjdk:8-jdk-alpine
 VOLUME /tmp
-COPY /my-java-projects/subrsa-java-learning/target/subrsa-java-learning-0.0.1-SNAPSHOT.jar /usr/app/
+ARG JAR_FILE
 
-WORKDIR /usr/app
+COPY ${JAR_FILE} app.jar
 
-RUN sh -c 'touch subrsa-java-learning-0.0.1-SNAPSHOT.jar'
-
-ENTRYPOINT ["java", "-jar", "subrsa-java-learning-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
