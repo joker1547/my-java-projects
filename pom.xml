@@ -10,6 +10,7 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>subrsa-java-learning</module>
+		<module>subrsa-docker-api</module>
 	</modules>
 	<properties>
 		<spring.version>2.1.6.RELEASE</spring.version>
@@ -52,6 +53,11 @@
 			<version>1.18.4</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.github.docker-java</groupId>
+			<artifactId>docker-java</artifactId>
+			<version>3.1.4</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -59,6 +65,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
