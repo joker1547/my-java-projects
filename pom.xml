@@ -13,7 +13,7 @@
 		<module>subrsa-docker-api</module>
 	</modules>
 	<properties>
-		<spring.version>2.1.6.RELEASE</spring.version>
+		<spring.version>2.5.12</spring.version>
 	</properties>
 
 	<dependencies>
